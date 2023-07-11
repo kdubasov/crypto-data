@@ -1,0 +1,11 @@
+.CoinsListItem{}
+
+.CoinsListItem .name{
+    display: flex;
+    align-items: center;
+}
+.CoinsListItem .name img{
+    height: 25px;
+    aspect-ratio: 1 / 1;
+    margin-right: .25em;
+}
