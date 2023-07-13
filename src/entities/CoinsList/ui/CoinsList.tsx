@@ -23,6 +23,7 @@ const CoinsList: React.FC = () => {
 					<th>24h</th>
 					<th>7d</th>
 					<th>Mkt Cap</th>
+					<th>Last 7 Days</th>
 				</tr>
 			</thead>
 			<tbody>
