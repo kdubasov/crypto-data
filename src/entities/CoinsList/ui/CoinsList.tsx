@@ -3,17 +3,18 @@ import {useCoinsFilters} from "../../../shared/hooks/useCoinsFilters.ts";
 import {useGetCoinListQuery} from "../../../app/api/coins.ts";
 import {COINS_LIST} from "../../../shared/constants/api.ts";
 import CoinsListItem from "../../CoinsListItem";
-import {Table} from "react-bootstrap";
+import {Spinner, Table} from "react-bootstrap";
 
 const CoinsList: React.FC = () => {
 
 	const { currency, page, per_page } = useCoinsFilters();
-	const { data } = useGetCoinListQuery(COINS_LIST(currency, per_page, page));
+	const { data, isLoading } = useGetCoinListQuery(COINS_LIST(currency, per_page, page));
 
+	if (isLoading) return <Spinner />;
 	if (!data) return;
 
 	return (
-		<Table striped bordered hover responsive className={'CoinsList'}>
+		<Table bordered hover responsive className={'CoinsList'}>
 			<thead>
 				<tr>
 					<th>#</th>

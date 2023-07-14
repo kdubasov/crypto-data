@@ -3,6 +3,8 @@ import {ICoin} from "../../../shared/types/coins.ts";
 import {useCoinsFilters} from "../../../shared/hooks/useCoinsFilters.ts";
 import SmallGraph from "../../../shared/ui/SmallGraph";
 import {EBsColors} from "../../../shared/types/colors.ts";
+import {Link} from "react-router-dom";
+import {COIN_PAGE_LINK} from "../../../shared/constants/router.tsx";
 
 interface ICoinsListItem {
 	data: ICoin,
@@ -22,8 +24,10 @@ const CoinsListItem: React.FC<ICoinsListItem> = ({ data }) => {
 		<tr className={'CoinsListItem'}>
 			<td>#{data.market_cap_rank}</td>
 			<td className={"name"}>
-				<img src={data.image} alt={data.symbol}/>
-				<span><b>{data.name}</b> ({data.symbol?.toUpperCase()})</span>
+				<Link to={COIN_PAGE_LINK(data.id)}>
+					<img src={data.image} alt={data.symbol}/>
+					<span><b>{data.name}</b> ({data.symbol?.toUpperCase()})</span>
+				</Link>
 			</td>
 			<td>{currency?.toUpperCase()} {data.current_price?.toLocaleString()}</td>
 			<td>{getColorText(data.price_change_percentage_1h_in_currency?.toFixed(2), '%')}</td>

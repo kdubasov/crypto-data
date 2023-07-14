@@ -1,7 +1,8 @@
 import React from "react";
 
 export enum ELinks {
-	HOME = "/"
+	HOME = "/",
+	COIN = "/coin/:id"
 }
 
 export interface ILinksListItem {

@@ -1,0 +1,14 @@
+.CoinPage header{
+    display: flex;
+    align-items: center;
+}
+.CoinPage header img{
+    width: 150px;
+    margin-right: 1em;
+}
+
+/*text block in header*/
+.CoinPage header .text{}
+.CoinPage header .text h1{
+    margin: 0;
+}

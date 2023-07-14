@@ -53,3 +53,16 @@ export interface ICoin {
 export interface ISparkline {
 	price: number[]
 }
+
+export interface ICoinPage {
+	id: string,
+	symbol: string,
+	name: string,
+	coingecko_rank: number,
+	market_cap_rank: number,
+	image: {
+		thumb: string,
+		large: string,
+		small: string,
+	},
+}
